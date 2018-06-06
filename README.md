@@ -1,3 +1,3 @@
-# Gema 1.5
+Veja nossa wiki, tudo vai estar lá:
 
-[Programação Dinâmica](https://github.com/icmcgema/gema1.5/wiki/Programa%C3%A7%C3%A3o-Din%C3%A2mica)
+(Wiki Gema)[https://github.com/icmcgema/gema/wiki]
