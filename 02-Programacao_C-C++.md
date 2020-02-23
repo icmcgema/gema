@@ -337,7 +337,7 @@ int main() {
 
 Aqui vai um problema que aborda alguns dos principais conceitos vistos nessa aula:
 
-Um grande restaurante em São Carlos, conhecido por muitos como *podrão*, está fazendo uma formidável promoção: serão distribuídos **N** litros de óleo para o primeiro grupo de pessoas que chegar lá, com a seguinte condição: o óleo sera dividido pelo grupo, e cada pessoa do grupo deverá receber quantidades **iguais** de óleo. Ou seja, os N litros de óleo deverão ser repartidos igualmente entre todos os integrantes do grupo. Vendo essa inigualável promoção, a famosa esportista *Limora* decide, rapidamente, formar um grupo de **K** pessoas para ir ao podrão. Porém, no meio do caminho até lá, teve uma dúvida: será que eles conseguirão ganhar a promoção?
+Um grande restaurante em São Carlos, conhecido por muitos como *podrão*, está fazendo uma formidável promoção: serão distribuídos **N** litros de óleo para o primeiro grupo de pessoas que chegar lá, com a seguinte condição: o óleo sera dividido pelo grupo, e cada pessoa do grupo deverá receber quantidades **inteiras e iguais** de óleo. Ou seja, os N litros de óleo deverão ser repartidos igualmente entre todos os integrantes do grupo. Vendo essa inigualável promoção, a famosa esportista *Limora* decide, rapidamente, formar um grupo de **K** pessoas para ir ao podrão. Porém, no meio do caminho até lá, teve uma dúvida: será que eles conseguirão ganhar a promoção?
 
 Dados a quantidade **N** de litros de óleo e **K** de pessoas no grupo, informe se Limora ganhará a promoção.
 
