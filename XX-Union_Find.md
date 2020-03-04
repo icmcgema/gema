@@ -354,6 +354,169 @@ yes
 
 Como a estrutura do union-find é baseada em array, podemos utilizar, por exemplo, uma *seg-tree persistente* para manter os valores de cada versão.
 
+```c++
+const int MAXN = 1e5 + 5;
+
+struct Node {
+	int L, R; // filhos left e right
+
+	int par, siz; // parent e size, utilizados se forem folha
+	int tim; // tempo de alteracao
+
+	Node() { L = R = -1; } // filhos nulos inicialmente
+} seg[12 * MAXN];
+
+int n; // qtt de nos
+int root[MAXN]; // quem eh a raiz no momento i
+int available; // ultimo nó utilizado
+int cur_time; // tempo atual
+
+void build(int p, int i, int j) {
+	if (i == j) { // folha
+		seg[p].par = i; // inicializacao padrao
+		seg[p].siz = 1; // rank aleatorio
+		seg[p].tim = 0;
+	} else {
+		int m = (i + j) / 2;
+
+		seg[p].L = ++available;
+		build(seg[p].L, i, m);
+
+		seg[p].R = ++available;
+		build(seg[p].R, m+1, j);
+	}
+};
+
+// inicializa a seg persistente
+inline void init() {
+	root[0] = ++available;
+	build(root[0], 1, n);
+}
+
+Node query(int p, int i, int j, int x, int t) { // quem eh o filho de X no tempo T
+												// procurando na seg do intervalo [i, j]
+												// atualmente no no p
+
+	if (i == j) { // chegou na folha
+		if (seg[p].tim > t) return seg[p];
+		if (seg[p].par == x) return seg[p];
+		return query(root[t], 1, n, seg[p].par, t);
+	}
+
+	int m = (i + j) / 2;
+	if (x <= m) return query(seg[p].L, i, m, x, t);
+	else return query(seg[p].R, m+1, j, x, t);
+}
+
+inline Node find(int x, int t) { // quem eh o lider de x no tempo t
+	return query(root[t], 1, n, x, t);
+}
+
+inline bool same(int u, int v, int t) {
+	return find(u, t).par == find(v, t).par;
+}
+
+int update_par(int p, int i, int j, int u, int v, int t) { // par[u] = v
+
+	if (i == j) { // chegou na folha
+		// cria um novo no
+
+		++available;
+		seg[available].tim = t;
+		seg[available].par = v;
+		seg[available].siz = seg[p].siz;
+		return available;
+	} else {
+		int m = (i + j) / 2;
+
+		if (u <= m) { // esta na esquerda
+			int cur_node = ++available;
+			seg[cur_node].R = seg[p].R;
+			seg[cur_node].L = update_par(seg[p].L, i, m, u, v, t);
+
+			return cur_node;
+		} else {
+			int cur_node = ++available;
+			seg[cur_node].L = seg[p].L;
+			seg[cur_node].R = update_par(seg[p].R, m+1, j, u, v, t);
+
+			return cur_node;
+		}
+	}
+}
+
+int update_siz(int p, int i, int j, int u, int s, int t) { // siz[u] += s;
+
+	if (i == j) { // chegou na folha
+		// cria um novo no
+
+		++available;
+		seg[available].tim = t;
+		seg[available].siz = seg[p].siz + s; // aumenta o tamanho
+		seg[available].par = seg[p].par;
+		return available;
+	} else {
+		int m = (i + j) / 2;
+		if (u <= m) { // esta na esquerda
+			++available;
+
+			int cur_node = available;
+			seg[cur_node].R = seg[p].R;
+			seg[cur_node].L = update_siz(seg[p].L, i, m, u, s, t);
+
+			return cur_node;
+		} else {
+			++available;
+
+			int cur_node = available;
+			seg[cur_node].L = seg[p].L;
+			seg[cur_node].R = update_siz(seg[p].R, m+1, j, u, s, t);
+
+			return cur_node;
+		}
+	}
+}
+
+// liga dois nos de acordo com a conexao no momento t
+inline void merge(int u, int v, int t) {
+	Node a = find(u, t);
+	Node b = find(v, t);
+
+	int old_par = a.par;
+	int new_par = b.par;
+	int old_siz = b.par;
+	int new_siz = a.siz;
+
+	if (a.par == b.par)
+		new_siz = 0; // nao precisa alterar o tamanho
+	if (a.siz > b.siz) swap(a, b);
+
+	root[cur_time] = update_par(root[t], 1, n, old_par, new_par, t);
+	root[cur_time] = update_siz(root[cur_time], 1, n, old_siz, new_siz, t);
+}
+
+int main() {
+	int q; cin >> n >> q;
+	init();
+
+	while(q--) {
+		int op; cin >> op;
+		int x, y, t; cin >> x >> y >> t;
+
+		++cur_time; // atualiza o tempo atual
+		root[cur_time] = root[cur_time-1]; // a raiz, por enquanto, eh a mesma da antiga
+
+		if (op == 1) { // conectar os fios
+			merge(x, y, t);
+		} else if (op == 2) { // verificar
+			cout << (same(x, y, t) ? "yes" : "no") << '\n';
+		}
+	}
+
+	return 0;
+}
+```
+
 # Referências
 
 - [cp-algorithms](https://cp-algorithms.com/data_structures/disjoint_set_union.html)
