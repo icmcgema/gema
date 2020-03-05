@@ -525,7 +525,7 @@ int main() {
 
 [Anansi's Cobweb](https://acm.timus.ru/problem.aspx?space=1&num=1671) ([Minha solução](https://ideone.com/RhGSBv))
 
-[Strange Food Chain](https://www.spoj.com/problems/CHAIN/) ([Minha solução](https://ideone.com/RhGSBv))
+[Strange Food Chain](https://www.spoj.com/problems/CHAIN/) ([Minha solução](https://ideone.com/zzEtfd))
 
 [Learning Languages](https://codeforces.com/problemset/problem/277/A) ([Minha solução](https://ideone.com/r6Hk7G))
 
