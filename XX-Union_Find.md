@@ -536,3 +536,5 @@ int main() {
 [J - Trucks](https://codeforces.com/gym/101473/attachments) ([Solução](https://ideone.com/cLt13Z))
 
 [Energia](https://neps.academy/problem/487) ([Solução](https://ideone.com/fvvOpf))
+
+[G - Hunting leshys](https://codeforces.com/gym/102299/) ([Solução](https://ideone.com/HdghtU))
