@@ -250,6 +250,8 @@ void merge(int u, int v) {
 	if (siz[a] > siz[b]) swap(a, b);
 	old_par.push(make_pair(a, par[a]));
 	old_siz.push(make_pair(b, siz[b]));
+	
+	if (a == b) return; // ja pertencem ao mesmo conjunto
 
 	par[a] = b;
 	siz[b] += siz[a];
@@ -315,6 +317,7 @@ void merge(int u, int v, int t) {
 	int a = find(u, t);
 	int b = find(v, t);
 	if (siz[a] > siz[b]) swap(a, b);
+	if (a == b) return;
 
 	par[a] = b;
 	tim[a] = t; // atualiza o tempo em que foi feita a ligacao
