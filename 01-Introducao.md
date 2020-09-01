@@ -10,7 +10,7 @@ Certo, você irá resolver um problema. Para se familiarizar melhor com eles, aq
 1. Título do Problema\
     Na maioria dos casos, é *realmente* só um título, não influenciando em nada o problema. Porém, às vezes ele nos dá uma dica de como o resolver (apresenta alguma *tag*, etc.)
 2. História do Problema\
-    Mesma coisa que em vestibular. Uma historinha que o cara criou só para o problema ter sentido - e que, assim como em matemática, o que realmente importa está dentro dela. Portanto, é sempre bom ler o enunciado para saber o que fazer.
+    Mesma coisa que em vestibular. Uma historinha que a pessoa criou só para o problema ter sentido - e que, assim como em matemática, o que realmente importa está dentro dela. Portanto, é sempre bom ler o enunciado para saber o que fazer.
 3. Constraints (restrições)\
     Embora agora isso não faça muito sentido, mais pra frente vocês verão que isso importa muito. As *constraints* de determinado problema representam o intervalo que os valores de entrada podem apresentar. Isso irá restringir a complexidade do algoritmo que você desenvolver, ou o tipo de variável que você deve utilizar.
 4. Casos de Teste de Exemplo\
@@ -22,17 +22,17 @@ Certo, você irá resolver um problema. Para se familiarizar melhor com eles, aq
 
 Aqui vai um exemplo básico de problema:
 
-| Cremosas em Ferpa |
+| Loppa no Parque |
 | --- |
 | Tempo limite: 1s |
 
-Jaojão é um garoto sagaz. Sempre que possível, ele vai à Ferpa em busca de cremosas aos finais de semana. Agora ele quer dizer a seus amigos a quantiadade *k* de cremosas que ele avistou em sua grande terra natal em um final de semana. Seja *n* (0 < n < 100) o número de cremosas que Jaojão viu no sábado e *m* (0 < m < 100) o número de cremosas que ele viu no domingo, responda a quantidade *k* de cremosas avistadas.
+Loppa gosta de passear. Sempre que possível, ele vai ao parque nos finais de semana. Agora ele quer dizer a seus amigos a quantidade *k* de aves que ele avistou no seu último passeio. Seja *n* (0 < n < 100) o número de pombos que Loppa viu no sábado e *m* (0 < m < 100) o número de urubus que ele viu no domingo, responda a quantidade *k* de aves avistadas.
 
 Entrada\
-A primeira linha contém dois inteiros *n* e *m* (a quantidade de cremosas avistadas).
+A primeira linha contém dois inteiros *n* e *m* (a quantidade de aves avistadas).
 
 Saída\
-Seu programa deverá apresentar um único inteiro *k*, o total de cremosas.
+Seu programa deverá apresentar um único inteiro *k*, o total de aves.
 
 Exemplo
 ```
@@ -43,7 +43,7 @@ Saída:
 7
 ```
 
-Bom, você deve ter percebido que a solução deste problema é apenas somar os dois valores de entrada. Nele, podemos perceber as situações que destaquei acima: o título do problema *(que realmente não tem nada a ajudar na solução em si)*; a história *(que tem muita coisa inútil, porém é nela que está descrito o problema)*. Nesse caso, as *constraints* são dadas também no enunciado (tanto *n* quanto *m* são valores inteiros entre 1 e 99, inclusive), isso nos ajuda a escollher os tipos de variáveis que vamos utilizar; e a restrição de tempo do problema é 1 segundo - isto é, a execução do seu problema não pode ultrapassar 1 segundo - vamos ver mais para frente como saber se seu programa será executado dentro do tempo limite.
+Bom, você deve ter percebido que a solução deste problema é apenas somar os dois valores de entrada. Nele, podemos perceber as situações que destaquei acima: o título do problema *(que realmente não tem nada a ajudar na solução em si)*; a história *(que tem muita coisa inútil, porém é nela que está descrito o problema)*. Nesse caso, as *constraints* são dadas também no enunciado (tanto *n* quanto *m* são valores inteiros entre 1 e 99, inclusive), isso nos ajuda a escolher os tipos de variáveis que vamos utilizar; e a restrição de tempo do problema é 1 segundo - isto é, a execução do seu problema não pode ultrapassar 1 segundo - vamos ver mais para frente como saber se seu programa será executado dentro do tempo limite.
 
 ## Introdução à Programação em C++
 
@@ -97,13 +97,15 @@ Após submeter seu código, você pode receber alguma resposta do site em que ma
 [GitHub do LoppA](https://github.com/LoppA)\
 [GitHub da lmoura](https://github.com/lusmoura)\
 [GitHub do Preischadt](https://github.com/thiagop-usp)\
-[GitHub do David](https://github.com/davidcairuz)
+[GitHub do David](https://github.com/davidcairuz)\
+[Github do Turci](https://github.com/lucasturci)
 
 #### Em inglês
 [Geeks for Geeks](https://www.geeksforgeeks.org/)\
 [HackerRank](https://www.hackerrank.com/)\
 [HackerEarth](https://www.hackerearth.com/)\
 [CP-Algorithms](https://cp-algorithms.com/)\
+Canal do [Errichto](https://www.youtube.com/channel/UCBr_Fu6q9iHYQCh13jmpbrg) no youtube\
 Canal do [Abdul Bari](https://www.youtube.com/channel/UCZCFT11CWBi3MHNlGf019nw/) no youtube\
 Canal do [Tushar Roy](https://www.youtube.com/user/tusharroy2525) no youtube\
 [Texto do João Gui sobre deliberate practice](https://joaogui1.github.io/CP/training/)
