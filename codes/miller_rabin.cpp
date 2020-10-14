@@ -36,7 +36,7 @@ ll fexp(ll a, ll e, ll mod){
 }
 
 //Miller-Rabin. Checa se o número p é fortemente pseudoprimo na base a.
-//Complexidade: O(log(n)) sem modmul, O(log²(n)) com modmul.
+//Complexidade: O(log(p)) sem modmul, O(log²(p)) com modmul.
 bool miller_rabin (ll p, ll a){
 
 	ll q = p-1, k=0;
